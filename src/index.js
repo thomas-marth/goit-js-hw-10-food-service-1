@@ -1,2 +1,2 @@
 import './styles.css';
-import './js/task';
+import './js/menu-list';
