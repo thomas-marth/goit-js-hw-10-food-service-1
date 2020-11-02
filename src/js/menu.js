@@ -6,15 +6,16 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
+//добавляет меню
 const menuContainerRef = document.querySelector('.js-menu');
-const toggleSwitch = document.querySelector('#theme-switch-toggle');
-const bodyStyle = document.body.classList;
-
 const createMenuMarkup = menuListTpl(menuList);
 menuContainerRef.insertAdjacentHTML('beforeend', createMenuMarkup);
 
+//меняет цвет темы
+const toggleSwitch = document.querySelector('#theme-switch-toggle');
+const bodyStyle = document.body.classList;
 
-onActiveTheme();
+setDarkTheme();
 toggleSwitch.addEventListener('change', onToggleTheme);
 
 function onToggleTheme(e) {
@@ -24,7 +25,7 @@ function onToggleTheme(e) {
   localStorage.setItem('theme', bodyStyle.value);
 }
 
-function onActiveTheme() {
+function setDarkTheme() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
     bodyStyle.add(savedTheme);

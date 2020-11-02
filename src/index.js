@@ -1,2 +1,2 @@
 import './styles.css';
-import './js/menu-list';
+import './js/menu';
